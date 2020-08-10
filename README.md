@@ -19,6 +19,8 @@ $ npm login --registry=https://npm.pkg.github.com
 
 ### `npm start`
 
+![alt text](./assets/gits.gif)
+
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
