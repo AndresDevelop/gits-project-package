@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+/*add self host font */
+@font-face {
+  font-family: "neuehanskendrick";
+  font-style: normal;
+  src: url("./fonts/neuehanskendrick-regular.woff2") format("woff2");
+  src: url("./fonts/neuehanskendrick-regular.woff") format("woff");
+  src: url("./fonts/neuehanskendrick-regular.eot") format("embedded-opentype");
+}

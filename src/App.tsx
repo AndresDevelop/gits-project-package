@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Switch as Router } from "react-router-dom";
+
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { ThemeProvider } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import { lightTheme } from "./theme/index";
+
+import Home from "./pages/Home/Home";
+import Git from "./pages/Git/Git";
+import CreateGits from "./pages/CreateGits/CreateGits";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={lightTheme}>
+      <CssBaseline />
+      <Grid container direction="row" justify="flex-start" alignItems="center">
+        <Header></Header>
+        <Router>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/create-gits">
+            <CreateGits />
+          </Route>
+          <Route exact path="/:id">
+            <Git />
+          </Route>
+        </Router>
+      </Grid>
+    </ThemeProvider>
   );
 }
 
